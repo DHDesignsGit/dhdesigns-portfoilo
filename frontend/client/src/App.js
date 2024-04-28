@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// importování rotes
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+// importování stránek
+import LandingPage from "./pages/landingPage/LandingPage"
+import PortfolioPage from "./pages/portfolioPage/PortfolioPage"
+import OffersPage from "./pages/offersPage/OffersPage"
+import ContactsPage from "./pages/contactsPage/ContactsPage"
+
+// importování Layoutu
+import AppLayout from "./layouts/appLayout/AppLayout"
+
+
+const App = () => {
+    return <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<AppLayout />}>
+
+                <Route index element={<LandingPage />} />
+                <Route path='/portfolio' element={<PortfolioPage />} />
+                <Route path='/offers' element={<OffersPage />} />
+                <Route path='/contacts' element={<ContactsPage />} />
+
+            </Route>
+        </Routes>
+    </BrowserRouter>
 }
 
-export default App;
+export default App
