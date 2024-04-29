@@ -1,0 +1,16 @@
+.footerWrapper{
+    display: flex;
+    flex-direction: column;
+}
+.footerLogo{
+    margin: 0% auto;
+    width: 20%;
+}
+.footerInformations{
+    margin: 0% auto;
+    text-align: center;
+}
+.footerImgs{
+    display: flex;
+    flex-direction: row;
+}
